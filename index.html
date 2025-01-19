@@ -1,203 +1,603 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sandesh Kumar's Portfolio - B.Tech Computer Science and Engineering, showcasing skills, projects, experience, and achievements.">
-    <meta name="keywords" content="Sandesh Kumar, portfolio, computer science, machine learning, Salesforce, coding, developer">
-    <meta name="author" content="Sandesh Kumar">
-    <title>Sandesh Kumar - Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Sandesh Kumar's Portfolio - Full Stack Developer, ML Enthusiast, and Salesforce Expert"
+    />
+    <meta
+      name="keywords"
+      content="Sandesh Kumar, Full Stack Developer, Machine Learning, Portfolio, Salesforce, Web Development, Coding"
+    />
+    <meta name="author" content="Sandesh Kumar" />
+    <title>Sandesh Kumar - Full Stack Developer Portfolio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <style>
       body {
-          font-family: 'Roboto', sans-serif;
-          margin: 0;
-          padding: 0;
+        font-family: "Roboto", sans-serif;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
       }
-      
-      header {
-          background-color: #f8f9fa;
+
+      .navbar {
+        transition: all 0.3s ease;
       }
-      
-      #hero {
-          background: linear-gradient(to right, #4e73df, #1cc88a);
-          color: white;
+
+      .navbar-brand {
+        font-size: 1.8rem;
+        font-weight: bold;
       }
-      
-      #about, #skills, #projects, #contact {
-          padding: 60px 0;
+
+      /* Hero Section Styles */
+  .hero-section {
+    height: 100vh;
+    background: radial-gradient(circle, #4e73df, #1cc88a);
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-section:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("https://source.unsplash.com/random/1920x1080/?technology");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    z-index: 0;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    line-height: 1.2;
+    animation: fadeInDown 1s ease;
+  }
+
+  .hero-content p {
+    font-size: 1.5rem;
+    margin-top: 15px;
+    animation: fadeInUp 1.5s ease;
+  }
+
+  .hero-content .btn {
+    background: linear-gradient(45deg, #1cc88a, #4e73df);
+    border: none;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+  }
+
+  .hero-content .btn:hover {
+    transform: scale(1.1);
+  }
+
+      #about,
+      #skills,
+      #projects,
+      #experience,
+      #contact {
+        padding: 100px 0;
+        min-height: 60vh;
       }
-      
-      #about h2, #skills h2, #projects h2, #contact h2 {
-          font-size: 2.5rem;
-          margin-bottom: 30px;
+
+      .skill-card ul {
+        list-style: none;
+        padding-left: 0;
       }
-      
-      .card {
-          border: none;
-          border-radius: 8px;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+      .skill-card li {
+        padding: 5px 0;
       }
-      
-      .card img {
-          border-radius: 8px;
+
+      .project-card {
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       }
-      
+
       footer {
-          background-color: #212529;
-          color: #fff;
+        background-color: #212529;
+        color: #fff;
+        padding: 30px 0;
       }
-      
+
       form .form-control {
-          border-radius: 8px;
+        border-radius: 8px;
       }
-      
+
       form .btn {
-          background-color: #4e73df;
-          color: white;
-          border-radius: 8px;
+        background-color: #4e73df;
+        color: white;
+        border-radius: 8px;
       }
+
+      .animate__animated.animate__fadeIn {
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+
+      #skills {
+        background: #f8f9fa;
+        padding: 100px 0;
+        position: relative;
+      }
+    
+      #skills .skill-bar {
+        position: relative;
+        margin-bottom: 25px;
+      }
+    
+      #skills .skill-bar span {
+        display: inline-block;
+        margin-bottom: 10px;
+        font-size: 1rem;
+        font-weight: 600;
+      }
+    
+      #skills .skill-bar .progress {
+        background-color: #e9ecef;
+        height: 20px;
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+      }
+    
+      #skills .skill-bar .progress .progress-bar {
+        height: 100%;
+        background: linear-gradient(45deg, #1cc88a, #4e73df);
+        transition: width 1s ease;
+      }
+
 
     </style>
-</head>
+  </head>
 
-<body>
-    <header class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">Sandesh Kumar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skills">Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Sandesh Kumar</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#skills">Skills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </header>
 
-    <section id="hero" class="bg-primary text-white text-center py-5">
-        <div class="container">
-            <h1 class="display-4">Hello, I'm Sandesh Kumar</h1>
-            <p class="lead">A Passionate Developer & Machine Learning Enthusiast</p>
-        </div>
+    <!-- Hero Section -->
+    <section
+      class="hero-section d-flex align-items-center justify-content-center"
+    >
+      <div class="hero-content text-center">
+        <h1>Hello, I'm Sandesh Kumar</h1>
+        <p>Passionate Full Stack Developer, Machine Learning Enthusiast</p>
+        <a href="#about" class="btn btn-lg text-white">Learn More</a>
+      </div>
     </section>
 
-    <section id="about" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">About Me</h2>
+    <!-- About Section -->
+    <section id="about" class="py-5 full-screen">
+      <div class="container">
+        <h2
+          class="text-center mb-4 animate__animated animate__fadeIn animate__delay-1s"
+        >
+          About Me
+        </h2>
+        <div class="row">
+          <div
+            class="col-md-6 animate__animated animate__fadeIn animate__delay-2s"
+          >
+            <img
+              src="https://avatars.githubusercontent.com/u/96278931?s=400&u=116821e849b68f95e7c523e94b690477473183cd&v=4"
+              alt="Sandesh Kumar"
+              class="img-fluid rounded-circle shadow-lg"
+            />
+          </div>
+          <div
+            class="col-md-6 animate__animated animate__fadeIn animate__delay-3s"
+          >
             <p class="lead">
-                I am currently pursuing a B.Tech in Computer Science and Engineering at Bakhtiyarpur College Of Engineering with a CGPA of 8.86. My expertise lies in C, C++, JavaScript, Python, and Java, with a focus on database management, machine learning, and web development.
+              I am a second-year undergraduate student at Bakhtiyarpur College
+              of Engineering, Patna, specializing in Computer Science and
+              Engineering. My expertise lies in full-stack development,
+              competitive programming, and machine learning. I'm constantly
+              learning new technologies and passionate about solving real-world
+              problems with clean, efficient code.
             </p>
+            <p>
+              I am an active Google Crowdsource influencer, with a strong
+              background in programming, database management, and a keen
+              interest in new technologies. I am also a tech lead at GDSC BCE
+              Patna, where I lead a team to create impactful tech solutions for
+              various projects.
+            </p>
+            <ul>
+              <li><strong>Email:</strong> sandeshkumar9811@gmail.com</li>
+              <li>
+                <strong>LinkedIn:</strong>
+                <a
+                  href="https://www.linkedin.com/in/sandesh-kumar-0a7224234/"
+                  target="_blank"
+                  >sandesh-kumar-0a7224234</a
+                >
+              </li>
+              <li><strong>Location:</strong> Patna, Bihar, India</li>
+            </ul>
+          </div>
         </div>
+      </div>
     </section>
 
-    <section id="skills" class="bg-light py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">Skills</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <h5>Programming Languages</h5>
-                    <ul>
-                        <li>C, C++ (Proficient)</li>
-                        <li>JavaScript (Intermediate)</li>
-                        <li>Python (Beginner)</li>
-                        <li>Java (Beginner)</li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h5>Technologies</h5>
-                    <ul>
-                        <li>MongoDB, MySQL, SQL (Intermediate)</li>
-                        <li>Bootstrap, WordPress, HTML, CSS</li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h5>Tools & Soft Skills</h5>
-                    <ul>
-                        <li>Git, GitHub, Visual Studio Code</li>
-                        <li>Collaboration, Communication, Leadership, Teamwork</li>
-                        <li>Time Management, Planning</li>
-                    </ul>
-                </div>
+    <!-- Skills Section -->
+    <section id="skills" class="text-center">
+      <div class="container">
+        <h2 class="mb-5">Skills</h2>
+        <div class="row">
+          <div class="col-md-6 skill-bar">
+            <span>C, C++</span>
+            <div class="progress">
+              <div class="progress-bar" style="width: 90%"></div>
             </div>
-        </div>
-    </section>
-
-    <section id="projects" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">Projects</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card">
-                        <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Eventify">
-                        <div class="card-body">
-                            <h5 class="card-title">Eventify</h5>
-                            <p class="card-text">An innovative platform designed to streamline event management, allowing users to create, delete, and share events effortlessly.</p>
-                            <a href="https://github.com/SandeshKumar9811" class="btn btn-primary">View Project</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card">
-                        <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Cement Strength Predictor">
-                        <div class="card-body">
-                            <h5 class="card-title">Cement Strength Predictor</h5>
-                            <p class="card-text">A machine learning model to predict the compressive strength of cement using regression techniques, offering valuable insights for construction projects.</p>
-                            <a href="https://github.com/SandeshKumar9811" class="btn btn-primary">View Project</a>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div class="col-md-6 skill-bar">
+            <span>JavaScript</span>
+            <div class="progress">
+              <div class="progress-bar" style="width: 70%"></div>
             </div>
+          </div>
+          <div class="col-md-6 skill-bar">
+            <span>Python</span>
+            <div class="progress">
+              <div class="progress-bar" style="width: 50%"></div>
+            </div>
+          </div>
+          <div class="col-md-6 skill-bar">
+            <span>Java</span>
+            <div class="progress">
+              <div class="progress-bar" style="width: 40%"></div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
+    <!-- Projects Section -->
+    <section id="projects" class="py-5 full-screen">
+      <div class="container">
+        <h2
+          class="text-center mb-4 animate__animated animate__fadeIn animate__delay-1s"
+        >
+          Projects
+        </h2>
+        <div class="row">
+          <div
+            class="col-md-6 animate__animated animate__fadeIn animate__delay-2s"
+          >
+            <div class="card project-card">
+              <img
+                src="https://dot-io.vercel.app/eventify%20logo%20(1).png"
+                class="card-img-top"
+                alt="Eventify"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Eventify</h5>
+                <p class="card-text">
+                  An event management platform to create, share, and manage
+                  events with powerful admin controls. Designed to make event
+                  coordination seamless and scalable.
+                </p>
+                <a
+                  href="https://github.com/SandeshKumar9811"
+                  class="btn btn-primary"
+                  >View Project</a
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-6 animate__animated animate__fadeIn animate__delay-3s"
+          >
+            <div class="card project-card">
+              <img
+                src="https://dot-io.vercel.app/eventify%20logo%20(1).png"
+                class="card-img-top"
+                alt="Cement Strength Predictor"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Cement Strength Predictor</h5>
+                <p class="card-text">
+                  A machine learning project that predicts the compressive
+                  strength of cement based on multiple features, optimizing
+                  construction material use and quality.
+                </p>
+                <a
+                  href="https://github.com/SandeshKumar9811"
+                  class="btn btn-primary"
+                  >View Project</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="bg-light py-5">
+      <div class="container">
+        <h2
+          class="text-center mb-4 animate__animated animate__fadeIn animate__delay-1s"
+        >
+          Experience
+        </h2>
+        <div class="row">
+          <!-- Experience Card 1 -->
+          <div class="col-md-6 mb-4">
+            <div class="card shadow-lg border-0 rounded-3">
+              <div class="card-body">
+                <h4 class="card-title text-primary">
+                  GDSC BCE Patna (Tech Lead)
+                </h4>
+                <p class="card-subtitle mb-2 text-muted">
+                  September 2023 - Present (1 year 5 months)
+                </p>
+                <p class="card-text">
+                  As the Tech Lead at GDSC BCE Patna, I am responsible for
+                  managing and mentoring a team of passionate developers. My
+                  role involves overseeing the development of tech solutions,
+                  collaborating with other teams, and contributing to technical
+                  projects that impact the community.
+                </p>
+                <ul>
+                  <li>
+                    Led a team of 15+ developers for community-driven tech
+                    initiatives.
+                  </li>
+                  <li>
+                    Designed and implemented cutting-edge tech solutions to
+                    solve real-world problems.
+                  </li>
+                  <li>
+                    Collaborated with industry experts and guest speakers to
+                    organize knowledge-sharing sessions.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Experience Card 2 -->
+          <div class="col-md-6 mb-4">
+            <div class="card shadow-lg border-0 rounded-3">
+              <div class="card-body">
+                <h4 class="card-title text-primary">
+                  Google Crowdsource Influencer
+                </h4>
+                <p class="card-subtitle mb-2 text-muted">
+                  August 2022 - Present (2 years 6 months)
+                </p>
+                <p class="card-text">
+                  As a Google Crowdsource Influencer, I contribute to the
+                  improvement of Google products by providing valuable feedback,
+                  suggestions, and by helping improve language and regional
+                  inclusivity for AI-based applications.
+                </p>
+                <ul>
+                  <li>
+                    Contributed to improving Google products for over 10
+                    languages.
+                  </li>
+                  <li>
+                    Helped enhance user experience for millions of users
+                    worldwide.
+                  </li>
+                  <li>
+                    Collaborated with the AI team to test new features and
+                    provide feedback.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Experience Card 3 -->
+          <div class="col-md-6 mb-4">
+            <div class="card shadow-lg border-0 rounded-3">
+              <div class="card-body">
+                <h4 class="card-title text-primary">
+                  CodeChamp (Core Team Member)
+                </h4>
+                <p class="card-subtitle mb-2 text-muted">
+                  June 2022 - Present (2 years 8 months)
+                </p>
+                <p class="card-text">
+                  I have been part of the core team at CodeChamp, where I
+                  contribute to organizing coding events, hackathons, and
+                  webinars to enhance the coding culture at my college.
+                  Additionally, I help mentor juniors in competitive
+                  programming.
+                </p>
+                <ul>
+                  <li>
+                    Organized coding competitions and hackathons with over 200
+                    participants.
+                  </li>
+                  <li>
+                    Mentored students in preparing for coding competitions and
+                    improving problem-solving skills.
+                  </li>
+                  <li>
+                    Created a community for students to collaborate and learn
+                    programming together.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Experience Card 4 -->
+          <div class="col-md-6 mb-4">
+            <div class="card shadow-lg border-0 rounded-3">
+              <div class="card-body">
+                <h4 class="card-title text-primary">
+                  Flipkart SCOA Internship
+                </h4>
+                <p class="card-subtitle mb-2 text-muted">
+                  August 2022 - September 2022 (2 months)
+                </p>
+                <p class="card-text">
+                  During my internship at Flipkart, I worked on supply chain
+                  optimization by analyzing and streamlining logistics data.
+                  This internship provided me with valuable hands-on experience
+                  in the supply chain domain.
+                </p>
+                <ul>
+                  <li>
+                    Analyzed and improved supply chain processes to reduce
+                    operational costs.
+                  </li>
+                  <li>
+                    Collaborated with cross-functional teams to improve
+                    data-driven decision making.
+                  </li>
+                  <li>
+                    Gained insights into large-scale logistics operations and
+                    optimization strategies.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Experience Card 5 -->
+          <div class="col-md-6 mb-4">
+            <div class="card shadow-lg border-0 rounded-3">
+              <div class="card-body">
+                <h4 class="card-title text-primary">
+                  Techphoton Solutions Pvt Ltd (Associate)
+                </h4>
+                <p class="card-subtitle mb-2 text-muted">
+                  February 2022 - May 2022 (4 months)
+                </p>
+                <p class="card-text">
+                  At Techphoton Solutions, I worked as an Associate where I
+                  assisted in implementing tech solutions for clients, focusing
+                  on web development and software optimization. This experience
+                  helped me sharpen my problem-solving and coding skills in
+                  real-world applications.
+                </p>
+                <ul>
+                  <li>
+                    Assisted in the development of client-facing applications.
+                  </li>
+                  <li>
+                    Improved software functionality and performance based on
+                    client feedback.
+                  </li>
+                  <li>
+                    Collaborated with senior developers to enhance system
+                    architecture.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
     <section id="contact" class="bg-dark text-white py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">Contact Me</h2>
-            <form id="contact-form">
-                <div class="mb-3">
-                    <label for="name" class="form-label">Your Name</label>
-                    <input type="text" class="form-control" id="name" required>
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Your Email</label>
-                    <input type="email" class="form-control" id="email" required>
-                </div>
-                <div class="mb-3">
-                    <label for="message" class="form-label">Your Message</label>
-                    <textarea class="form-control" id="message" rows="4" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-light">Send Message</button>
-            </form>
-        </div>
+      <div class="container">
+        <h2
+          class="text-center mb-4 animate__animated animate__fadeIn animate__delay-1s"
+        >
+          Contact Me
+        </h2>
+        <form
+          id="contact-form"
+          class="animate__animated animate__fadeIn animate__delay-2s"
+        >
+          <div class="mb-3">
+            <label for="name" class="form-label">Your Name</label>
+            <input type="text" class="form-control" id="name" required />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Your Email</label>
+            <input type="email" class="form-control" id="email" required />
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Your Message</label>
+            <textarea
+              class="form-control"
+              id="message"
+              rows="4"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-light">Send Message</button>
+        </form>
+      </div>
     </section>
 
+    <!-- Footer -->
     <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2025 Sandesh Kumar. All Rights Reserved.</p>
+      <p>&copy; 2025 Sandesh Kumar. All Rights Reserved.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      document.getElementById('contact-form').addEventListener('submit', function (event) {
-          event.preventDefault();
-          alert("Message sent successfully!");
-      });
-
-    </script>
-</body>
-
+  </body>
 </html>
